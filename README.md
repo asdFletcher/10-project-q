@@ -3,10 +3,13 @@
 
 ## Project Name
 
-### Author: Student/Group Name
+### Author: 
+Heather Cherewaty
+Fletcher LaRue
 
 ### Links and Resources
-* [repo](http://xyz.com)
+
+* [repo](https://github.com/asdFletcher/10-project-q)
 * [travis](http://xyz.com)
 * [back-end](http://xyz.com)
 * [front-end](http://xyz.com)
