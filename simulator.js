@@ -4,10 +4,13 @@ const Publisher = require('./lib/publisher.js');
 
 const Q = new Publisher;
 
-Q.publish('database', 'delete', {id:77});
-Q.publish('database', 'delete', {id:77, name:'John'});
-Q.publish('network', 'attack', {type: 'DDOS', source:'Russia'});
+// Q.publish('database', 'delete', {id:77});
+// Q.publish('database', 'delete', {id:77, name:'John'});
+// Q.publish('network', 'attack', {type: 'DDOS', source:'Russia'});
 
 setInterval(() => {
+  console.log('Simulator: sending event')
   Q.publish('database', 'delete', {id:77});
-},1000);
+  Q.publish('database', 'create', {id:55});
+  Q.publish('network', 'attack', {type: 'DDOS', source:'Russia'});
+},2000);
