@@ -18,3 +18,7 @@ const network = new Q('network');
 network.monitorEvent('attack');
 network.monitorEvent('no-server');
 
+
+// setTimeout( ()=>{
+//   Q.stop();
+// }, 10000);
