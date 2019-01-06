@@ -1,7 +1,7 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 =================================================
 
-## Project Name
+## Q-Server 
 
 ### Author: 
 Heather Cherewaty
@@ -12,35 +12,30 @@ Fletcher LaRue
 
 * [repo](https://github.com/asdFletcher/10-project-q)
 * [travis](https://www.travis-ci.com/asdFletcher/10-project-q)
-<!-- * [back-end](http://xyz.com)
-* [front-end](http://xyz.com) -->
+
 
 ### Modules
-#### `modulename.js`
+#### `publisher.js`, `server.js`, `subscriber.js`
 ##### Exported Values and Methods
-
-###### `foo(thing) -> string`
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
+* Connection to server established and event emitted from `publisher.js`.
+* Connection and events heard and ran on `server.js` from `publisher.js`; sends relevent information to subscribers who care about particular events on `logger.js`.
+* Log information about events heard from `server` on `logger.js`.
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `PORT` - Defined in ENV.
 
 #### Running the app
 * `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+* Endpoint: `/publisher.js`
+  * Returns information to server
+* Endpoint: `/server.js`
+  * Listens for events from publisher, emits events to subscribers
+* Endpoint: `/subscriber.js`
+  * Emits events from server
 
 #### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
-
-#### UML
-Link to an image of the UML for your application and response to events
+* npm test (runs unit tests)
+* npm run lint (runs linter tests)
+* When `subscribe` is used on `logger.js`, we expect this method to have been called on `subscriber.js`.
+* When `publish` is used on `simulator.js`, we expect this method to have been called on `publisher.js`.
