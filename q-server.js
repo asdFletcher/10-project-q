@@ -21,4 +21,4 @@ network.monitorEvent('no-server');
 
 // setTimeout( ()=>{
 //   Q.stop();
-// }, 10000);
+// }, 4000);

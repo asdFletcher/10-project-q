@@ -21,5 +21,4 @@ db.subscribe('create', (payload) => {
 // });
 
 
-
 console.log(`Subscriber: i am subscribed to: ${db.subscriptions()}`);
